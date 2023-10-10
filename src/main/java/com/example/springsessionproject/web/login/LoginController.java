@@ -14,22 +14,11 @@ import java.io.IOException;
 @Controller
 public class LoginController {
 
-    @GetMapping("/signup")
-    public String signup() {
-        return "signup";
-    }
-
-    //username, password
-    @PostMapping("/signup")
-    public void save(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        log.info("username={}, password={}", username, password);
-        response.getWriter().write("ok");
-    }
-
     @GetMapping("/signin")
     public String signin() {
         return "signin";
     }
+
+
+
 }
