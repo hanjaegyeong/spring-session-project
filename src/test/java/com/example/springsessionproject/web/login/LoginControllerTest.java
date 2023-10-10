@@ -3,6 +3,7 @@ package com.example.springsessionproject.web.login;
 import com.example.springsessionproject.SessionConst;
 import com.example.springsessionproject.domain.login.LoginService;
 import com.example.springsessionproject.domain.member.Member;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
@@ -16,10 +17,13 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.validation.BeanPropertyBindingResult;
 import org.springframework.validation.BindingResult;
 
+import static org.hibernate.query.sqm.tree.SqmNode.log;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.when;
 
+
+@Slf4j
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
 public class LoginControllerTest {
@@ -61,7 +65,7 @@ public class LoginControllerTest {
         assertEquals("redirect:/home", viewName);
 
         long searchTime = endTime - startTime;
-        System.out.println("Session search time: " + searchTime + " milliseconds");
+        log.info("Session search time: " + searchTime + " milliseconds");
     }
 
 
@@ -89,7 +93,7 @@ public class LoginControllerTest {
         assertEquals("redirect:/home", viewName);
 
         long searchTime = endTime - startTime;
-        System.out.println("Session search time: " + searchTime + " milliseconds");
+        log.info("Session search time: " + searchTime + " milliseconds");
     }
 
     @Test
@@ -120,11 +124,11 @@ public class LoginControllerTest {
 
             long searchTime = endTime - startTime;
             totalSearchTime += searchTime;
-            System.out.println("Session search time: " + searchTime + " milliseconds");
+            log.info("Session search time: " + searchTime + " milliseconds");
         }
         // 평균 검색 시간 계산 및 출력
         long averageSearchTime = totalSearchTime / numberOfTests;
-        System.out.println("Average session search time: " + averageSearchTime + " milliseconds");
+        log.info("Average session search time: " + averageSearchTime + " milliseconds");
 
     }
 }
