@@ -11,4 +11,9 @@ public class Member {
     private String loginId; //로그인id
     @NotEmpty
     private String password;
+
+    public Member(String loginId, String password) {
+        this.loginId = loginId;
+        this.password = password;
+    }
 }
