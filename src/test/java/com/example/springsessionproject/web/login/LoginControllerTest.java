@@ -119,6 +119,7 @@ public class LoginControllerTest {
             assertEquals("redirect:/home", viewName);
 
             long searchTime = endTime - startTime;
+            totalSearchTime += searchTime;
             System.out.println("Session search time: " + searchTime + " milliseconds");
         }
         // 평균 검색 시간 계산 및 출력
