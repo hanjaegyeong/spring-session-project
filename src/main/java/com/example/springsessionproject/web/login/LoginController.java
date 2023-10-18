@@ -3,6 +3,7 @@ package com.example.springsessionproject.web.login;
 import com.example.springsessionproject.SessionConst;
 import com.example.springsessionproject.domain.login.LoginService;
 import com.example.springsessionproject.domain.member.Member;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
@@ -47,6 +48,15 @@ public class LoginController {
         HttpSession session = request.getSession();
         //세션에 로그인 회원 정보 보관
         session.setAttribute(SessionConst.LOGIN_MEMBER, loginMember);
+        return "redirect:/home";
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpServletRequest request) {
+        HttpSession session = request.getSession(false); //true면 세션 생성해버리니까 false로
+        if (session != null) {
+            session.invalidate(); // 세션 clear시키는 매서드
+        }
         return "redirect:/home";
     }
 }
