@@ -23,11 +23,11 @@ public class SessionInfoController {
         session.getAttributeNames().asIterator()
                 .forEachRemaining(name -> log.info("session name = {} value = {}", name, session.getAttribute(name)));
 
-        log.info("sessionId={}", session.getId());
-        log.info("getMaxInactiveInterval={}", session.getMaxInactiveInterval());
-        log.info("creationTime={}", new Date(session.getCreationTime())); //getCreationTime은 Long타입 -> Date로 형변환
-        log.info("lastAccessedTime={}", new Date(session.getLastAccessedTime()));
-        log.info("isNew={}", session.isNew());
+        log.info("sessionId={} ", session.getId());
+        log.info("getMaxInactiveInterval={} ", session.getMaxInactiveInterval());
+        log.info("creationTime={} ", new Date(session.getCreationTime())); //getCreationTime은 Long타입 -> Date로 형변환
+        log.info("lastAccessedTime={} ", new Date(session.getLastAccessedTime()));
+        log.info("isNew={}\n", session.isNew());
 
         return "세션 출력";
     }
