@@ -24,6 +24,7 @@
         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="signup">SignUp</a></li>
         <li class="nav-item"><a class="nav-link" href="signin">SignIn</a></li>
+        <li class="nav-item"><a class="nav-link" href="logout">Logout</a></li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -34,7 +35,7 @@
           </ul>
         </li>
       </ul>
-      <form class="d-flex">
+      <form class="d-flex" action="/cart" method="get">
         <button class="btn btn-outline-dark" type="submit">
           <i class="bi-cart-fill me-1"></i>
           Cart
@@ -66,14 +67,18 @@
           <div class="card-body p-4">
             <div class="text-center">
               <!-- Product name-->
-              <h5 class="fw-bolder">Fancy Product</h5>
+              <h5 class="fw-bolder">Sale Items</h5>
               <!-- Product price-->
-              $40.00 - $80.00
+              $140.00
             </div>
           </div>
           <!-- Product actions-->
-          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
+          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent d-flex justify-content-center align-items-center">
+            <form id="addToCartForm7" action="/addToCart" method="POST">
+              <input type="hidden" name="itemName" value="Sale Items">
+              <input type="hidden" name="price" value=140>
+              <button class="btn btn-outline-dark mt-auto" type="submit">Add to cart</button>
+            </form>
           </div>
         </div>
       </div>
@@ -87,7 +92,7 @@
           <div class="card-body p-4">
             <div class="text-center">
               <!-- Product name-->
-              <h5 class="fw-bolder">Special Item</h5>
+              <h5 class="fw-bolder">Dress</h5>
               <!-- Product reviews-->
               <div class="d-flex justify-content-center small text-warning mb-2">
                 <div class="bi-star-fill"></div>
@@ -102,9 +107,12 @@
             </div>
           </div>
           <!-- Product actions-->
-          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-            <a class="btn btn-outline-dark mt-auto" href="/addToCart?itemName=Dress&itemPrice=18.00">Add to cart</a>
-
+          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent d-flex justify-content-center align-items-center">
+            <form id="addToCartForm" action="/addToCart" method="POST">
+              <input type="hidden" name="itemName" value="Dress">
+              <input type="hidden" name="price" value=18>
+              <button class="btn btn-outline-dark mt-auto" type="submit">Add to cart</button>
+            </form>
           </div>
         </div>
       </div>
@@ -118,15 +126,19 @@
           <div class="card-body p-4">
             <div class="text-center">
               <!-- Product name-->
-              <h5 class="fw-bolder">Sale Item</h5>
+              <h5 class="fw-bolder">Shirts</h5>
               <!-- Product price-->
               <span class="text-muted text-decoration-line-through">$50.00</span>
               $25.00
             </div>
           </div>
           <!-- Product actions-->
-          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent d-flex justify-content-center align-items-center">
+            <form id="addToCartForm2" action="/addToCart" method="POST">
+              <input type="hidden" name="itemName" value="Shirts">
+              <input type="hidden" name="price" value=25>
+              <button class="btn btn-outline-dark mt-auto" type="submit">Add to cart</button>
+            </form>
           </div>
         </div>
       </div>
@@ -138,7 +150,7 @@
           <div class="card-body p-4">
             <div class="text-center">
               <!-- Product name-->
-              <h5 class="fw-bolder">Popular Item</h5>
+              <h5 class="fw-bolder">Shoes</h5>
               <!-- Product reviews-->
               <div class="d-flex justify-content-center small text-warning mb-2">
                 <div class="bi-star-fill"></div>
@@ -152,8 +164,12 @@
             </div>
           </div>
           <!-- Product actions-->
-          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent d-flex justify-content-center align-items-center">
+            <form id="addToCartForm3" action="/addToCart" method="POST">
+              <input type="hidden" name="itemName" value="Shoes">
+              <input type="hidden" name="price" value=40>
+              <button class="btn btn-outline-dark mt-auto" type="submit">Add to cart</button>
+            </form>
           </div>
         </div>
       </div>
@@ -167,15 +183,19 @@
           <div class="card-body p-4">
             <div class="text-center">
               <!-- Product name-->
-              <h5 class="fw-bolder">Sale Item</h5>
+              <h5 class="fw-bolder">Hat</h5>
               <!-- Product price-->
               <span class="text-muted text-decoration-line-through">$50.00</span>
               $25.00
             </div>
           </div>
           <!-- Product actions-->
-          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent d-flex justify-content-center align-items-center">
+            <form id="addToCartForm4" action="/addToCart" method="POST">
+              <input type="hidden" name="itemName" value="Hat">
+              <input type="hidden" name="price" value=25>
+              <button class="btn btn-outline-dark mt-auto" type="submit">Add to cart</button>
+            </form>
           </div>
         </div>
       </div>
@@ -189,12 +209,16 @@
               <!-- Product name-->
               <h5 class="fw-bolder">Fancy Product</h5>
               <!-- Product price-->
-              $120.00 - $280.00
+              $120.00
             </div>
           </div>
           <!-- Product actions-->
-          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
+          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent d-flex justify-content-center align-items-center">
+            <form id="addToCartForm0" action="/addToCart" method="POST">
+              <input type="hidden" name="itemName" value="Fancy Product">
+              <input type="hidden" name="price" value=120>
+              <button class="btn btn-outline-dark mt-auto" type="submit">Add to cart</button>
+            </form>
           </div>
         </div>
       </div>
@@ -208,7 +232,7 @@
           <div class="card-body p-4">
             <div class="text-center">
               <!-- Product name-->
-              <h5 class="fw-bolder">Special Item</h5>
+              <h5 class="fw-bolder">Pants</h5>
               <!-- Product reviews-->
               <div class="d-flex justify-content-center small text-warning mb-2">
                 <div class="bi-star-fill"></div>
@@ -223,8 +247,12 @@
             </div>
           </div>
           <!-- Product actions-->
-          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent d-flex justify-content-center align-items-center">
+            <form id="addToCartForm5" action="/addToCart" method="POST">
+              <input type="hidden" name="itemName" value="Pants">
+              <input type="hidden" name="price" value=18>
+              <button class="btn btn-outline-dark mt-auto" type="submit">Add to cart</button>
+            </form>
           </div>
         </div>
       </div>
@@ -236,7 +264,7 @@
           <div class="card-body p-4">
             <div class="text-center">
               <!-- Product name-->
-              <h5 class="fw-bolder">Popular Item</h5>
+              <h5 class="fw-bolder">Skirt</h5>
               <!-- Product reviews-->
               <div class="d-flex justify-content-center small text-warning mb-2">
                 <div class="bi-star-fill"></div>
@@ -250,8 +278,12 @@
             </div>
           </div>
           <!-- Product actions-->
-          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent d-flex justify-content-center align-items-center">
+            <form id="addToCartForm6" action="/addToCart" method="POST">
+              <input type="hidden" name="itemName" value="Skirt">
+              <input type="hidden" name="price" value=40>
+              <button class="btn btn-outline-dark mt-auto" type="submit">Add to cart</button>
+            </form>
           </div>
         </div>
       </div>
