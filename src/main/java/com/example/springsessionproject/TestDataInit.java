@@ -18,7 +18,7 @@ public class TestDataInit {
     @PostConstruct
     public void init() {
         Member member = new Member();
-        member.setLoginId("테스터");
+        member.setLoginId("tester");
         member.setPassword("testpw");
 
         memberRepository.save(member);
