@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>파일 업로드</title>
+</head>
+<body>
+<h1>파일을 업로드하세요.</h1>
+<button onclick="openFileUploadDialog()">파일 업로드</button>
+
+<input type="file" id="fileInput" style="display: none;">
+
+<script>
+  function openFileUploadDialog() {
+    const fileInput = document.getElementById("fileInput");
+    fileInput.click();
+  }
+</script>
+</body>
+</html>
