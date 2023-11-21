@@ -2,8 +2,10 @@ package com.example.springsessionproject.domain.Item;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Data
-public class Item {
+public class Item implements Serializable {
 
     private Long id;
     private String itemName;

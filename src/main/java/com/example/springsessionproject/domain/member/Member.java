@@ -3,8 +3,10 @@ package com.example.springsessionproject.domain.member;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Data
-public class Member {
+public class Member implements Serializable {
     private Long id;
 
     @NotEmpty
