@@ -29,9 +29,9 @@ public class ItemController {
 
         List<Item> cartItems = (List<Item>) session.getAttribute("cartItems");
 
-        if (cartItems == null) {
-            cartItems = new ArrayList<>();
-        }
+
+        cartItems = new ArrayList<>(); // 매번 새로운 장바구니로 세팅(데이터 축적 방지)
+
 
         for (int i = 0; i < itemName.size(); i++) {
             Item item = new Item(itemName.get(i), Integer.parseInt(price.get(i)));
@@ -40,7 +40,7 @@ public class ItemController {
 
         session.setAttribute("cartItems", cartItems);
 
-        return "cart"; // 뷰 이름
+        return "cart";
     }
 
 
