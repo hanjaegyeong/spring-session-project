@@ -12,9 +12,6 @@ public class TestDataInit {
 
     private final MemberRepository memberRepository;
 
-    /**
-     * 테스트용 데이터 추가
-     */
     @PostConstruct
     public void init() {
         Member member = new Member();
@@ -23,5 +20,4 @@ public class TestDataInit {
 
         memberRepository.save(member);
     }
-
 }
