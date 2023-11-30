@@ -18,14 +18,12 @@ public class CartController {
 
     @GetMapping
     public String viewCart(HttpSession session, Model model) {
-        // 세션에서 cartItem 리스트를 가져옵니다.
         List<Item> cartItems = (List<Item>) session.getAttribute("cartItems");
 
         if (cartItems == null) {
-            cartItems = new ArrayList<>(); // 장바구니가 비어있을 경우 빈 리스트를 생성합니다.
+            cartItems = new ArrayList<>();
         }
 
-        // 모델에 cartItems를 추가하여 뷰로 전달합니다.
         model.addAttribute("cartItems", cartItems);
 
         return "cart";

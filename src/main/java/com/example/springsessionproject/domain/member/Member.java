@@ -10,7 +10,7 @@ public class Member implements Serializable {
     private Long id;
 
     @NotEmpty
-    private String loginId; //로그인id
+    private String loginId;
     @NotEmpty
     private String password;
 
@@ -23,3 +23,4 @@ public class Member implements Serializable {
 
     }
 }
+
